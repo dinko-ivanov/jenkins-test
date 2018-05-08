@@ -23,7 +23,9 @@ parallel unitAndIntegration : {
 def runTests(tests) {
 	node {
 		unstash 'everything'
-		bat "gradlew test --tests *.${tests}"    
+		stage (tests) {
+			bat "gradlew test --tests *.${tests}"
+		}    
 	}
 
 }
