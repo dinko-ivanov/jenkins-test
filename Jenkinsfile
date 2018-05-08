@@ -12,13 +12,9 @@ node {
 	}	
 }
 
-parallel unitAndIntegration : {
-	runTests("unitAndIntegrationTests")                                
-}, e2e : {
-	runTests("e2eTests")
-}, performance: {
-	runTests("performanceTests")
-}
+runTests("unitAndIntegrationTests")                                
+runTests("e2eTests")
+runTests("performanceTests")
 
 def runTests(tests) {
 	node {
