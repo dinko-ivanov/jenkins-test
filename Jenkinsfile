@@ -14,7 +14,7 @@ parallel unitAndIntegration : {
 
 def runTests(tests) {
 	node {
-		bat 'gradlew test --tests *.${tests}'    
+		bat "gradlew test --tests *.${tests}"    
 	}
 
 }
