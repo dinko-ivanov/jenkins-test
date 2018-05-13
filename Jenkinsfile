@@ -4,7 +4,7 @@ pipeline {
 		stage('hello world') {
 			steps {
 				bat 'dir'
-				echo 'hello master'
+				echo 'hello my-feature'
 			}
 		}
 	}	
