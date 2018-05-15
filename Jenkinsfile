@@ -22,9 +22,9 @@ pipeline {
 				}
 			}
 		}
-		input 'Deploy to production'
 		stage('deploy') {
 		    steps {
+				input 'Deploy to production'
      			echo 'deploying ...'     
 		    }
 		    
