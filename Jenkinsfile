@@ -3,13 +3,25 @@ pipeline {
 	stages {
 		stage('build') {
 			steps {
-				sh './gradlew clean build -x test'
+				sh './gradlew clean build'
 			}
 		}
 		stage('test') {
-			steps {
-				sh './gradlew test'
+			parallel {
+			    stage('integration tests') {
+					steps {		
+					    sleep 5
+						echo 'integration tests done'			    
+					}
+				}
+			    stage('performance tests') {
+					steps {		
+					    sleep 3
+						echo 'performance tests done'			    
+					}
+				}
 			}
+
 		}
 	}
 }
